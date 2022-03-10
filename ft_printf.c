@@ -6,7 +6,7 @@
 /*   By: dipelaez <diego.pelaez@hotmail.com.br>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:23:10 by dipelaez          #+#    #+#             */
-/*   Updated: 2022/03/10 13:27:52 by dipelaez         ###   ########.fr       */
+/*   Updated: 2022/03/10 13:43:30 by dipelaez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -264,10 +264,7 @@ void	ft_itoa_address(t_data *data)
 	prefix = "0x";
 	ads_cpy = va_arg(data->ap, unsigned long);
 	temp = ft_itoa_base(ads_cpy, 16, 0);
-	printf("temp = %s\n", temp);
-	printf("prefix = %s\n", prefix);
 	nbr = ft_strjoin(prefix, temp);
-	printf("nbr = %s\n\n", nbr);
 	if (!ft_strncmp(nbr, "0x0", 3))
 	{
 		prefix = "(nil)";
