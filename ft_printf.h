@@ -6,7 +6,7 @@
 /*   By: dipelaez <diego.pelaez@hotmail.com.br>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 14:54:27 by dipelaez          #+#    #+#             */
-/*   Updated: 2022/03/09 16:52:57 by dipelaez         ###   ########.fr       */
+/*   Updated: 2022/03/09 17:53:49 by dipelaez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include    <stdarg.h>
 # include    "libft.h"
-# include   "ft_utils.c"
 # include    <stdio.h>
+
 
 typedef struct s_node {
 	char			c;

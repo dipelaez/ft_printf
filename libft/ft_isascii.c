@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dipelaez <dipelaez@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: dipelaez <diego.pelaez@hotmail.com.br>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 13:50:24 by dipelaez          #+#    #+#             */
-/*   Updated: 2021/08/19 13:50:25 by dipelaez         ###   ########.fr       */
+/*   Updated: 2022/03/10 13:40:47 by dipelaez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int	c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);

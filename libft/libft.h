@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dipelaez <dipelaez@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: dipelaez <diego.pelaez@hotmail.com.br>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 19:30:25 by dipelaez          #+#    #+#             */
-/*   Updated: 2021/09/04 22:29:29 by dipelaez         ###   ########.fr       */
+/*   Updated: 2022/03/10 13:41:55 by dipelaez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		ft_isalpha(int c);
  * @return This function returns non-zero value if c is an alphanumeric, else it 
  * returns 0.
 */
-int		ft_isalnum(int	c);
+int		ft_isalnum(int c);
 
 /**
  * @brief Checks if the character is ASCII.
@@ -44,7 +44,7 @@ int		ft_isalnum(int	c);
  * @return This function returns non-zero value if c is an ASCII, else it 
  * returns 0.
 */
-int		ft_isascii(int	c);
+int		ft_isascii(int c);
 
 /**
  * @brief Checks for a digit (0 through 9).
@@ -53,7 +53,7 @@ int		ft_isascii(int	c);
  * @return This function returns non-zero value if c is a digit, else it 
  * returns 0.
 */
-int		ft_isdigit(int	c);
+int		ft_isdigit(int c);
 
 /**
  * @brief Checks for any printable character including space.
@@ -62,7 +62,7 @@ int		ft_isdigit(int	c);
  * @return This function returns non-zero value if c is printable, else it 
  * returns 0.
 */
-int		ft_isprint(int	c);
+int		ft_isprint(int c);
 
 /**
  * @brief Calculates the length of the string pointed to by s,
@@ -71,17 +71,17 @@ int		ft_isprint(int	c);
  * @param s This is the string whose lenght is to be found.
  * @return Returns the number of characters in the string pointed to by s.
 */
-size_t	ft_strlen(const char	*s);
+size_t	ft_strlen(const char *s);
 
-void	*ft_memset(void	*s, int	c, size_t n);
+void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
-void	*ft_memcpy(void	*dest, const void	*src, size_t n);
+void	*ft_memcpy(void	*dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t	n);
 size_t	ft_strlcpy(char	*dst, char *src, size_t dstsize);
-int		ft_toupper(int	c);
-int		ft_tolower(int	c);
-char	*ft_strchr(const char	*s, int	c);
-char	*ft_strrchr(const	char *s, int	c);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const	char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);

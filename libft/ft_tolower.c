@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dipelaez <dipelaez@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: dipelaez <diego.pelaez@hotmail.com.br>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 13:53:53 by dipelaez          #+#    #+#             */
-/*   Updated: 2021/08/19 13:53:55 by dipelaez         ###   ########.fr       */
+/*   Updated: 2022/03/10 13:37:49 by dipelaez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int	c)
+int	ft_tolower(int c)
 {
 	if (c >= 65 && c <= 90)
 		return (c + 32);

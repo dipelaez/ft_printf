@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dipelaez <dipelaez@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: dipelaez <diego.pelaez@hotmail.com.br>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 13:51:55 by dipelaez          #+#    #+#             */
-/*   Updated: 2021/08/19 13:51:56 by dipelaez         ###   ########.fr       */
+/*   Updated: 2022/03/10 13:39:45 by dipelaez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char	*s, int	c)
+char	*ft_strchr(const char *s, int c)
 {
 	if (c > 127)
 		c %= 256;

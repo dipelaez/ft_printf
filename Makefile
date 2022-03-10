@@ -11,7 +11,8 @@ RM = rm -f
 INCLUDE = libft/
 
 SRC = ft_printf.c \
-	ft_list.c
+	ft_list.c \
+	ft_utils.c \
 
 OBJ = $(SRC:.c=.o)
 
