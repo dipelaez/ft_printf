@@ -6,7 +6,7 @@
 /*   By: dipelaez <diego.pelaez@hotmail.com.br>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 16:53:11 by dipelaez          #+#    #+#             */
-/*   Updated: 2022/03/10 13:45:39 by dipelaez         ###   ########.fr       */
+/*   Updated: 2022/03/10 17:48:17 by dipelaez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,4 +149,69 @@ void	ft_itoa_address(t_data *data)
 		ft_putstr(data, nbr);
 	free(temp);
 	free(nbr);
+}
+
+void	ft_putchar(t_data *data, char c)
+{
+	t_node	*temp;
+
+	if (!ft_isprint(c))
+		data->n_print++;
+	if (data->result == 0)
+		data->string = ft_new_node(c);
+	else
+	{
+		temp = ft_new_node(c);
+		ft_add_node(&data->string, temp);
+	}
+	data->result++;
+}
+
+void	ft_putstr(t_data *data, char *str)
+{
+	int			i;
+	const char	*temp;
+
+	i = 0;
+	if (!str)
+	{
+		temp = "(null)";
+		while (temp[i])
+		{
+			ft_putchar(data, temp[i]);
+			i++;
+		}
+		return ;
+	}
+	while (str[i])
+	{
+		ft_putchar(data, str[i]);
+		i++;
+	}
+}
+
+void	ft_putint(t_data *data, int nbr)
+{
+	long int	n;
+	char		*ptr;
+	char		*str;
+	int			signal;
+	int			len;
+
+	signal = 0;
+	n = nbr;
+	if (n < 0)
+	{
+		signal = 1;
+		n = -n;
+	}
+	len = ft_cdigit(n);
+	str = malloc(sizeof(char) * (len + 1 + signal));
+	if (!str)
+		return ;
+	ptr = &str[len + signal];
+	*ptr = '\0';
+	ft_strfill(&ptr, n, signal);
+	ft_putstr(data, ptr);
+	free(ptr);
 }

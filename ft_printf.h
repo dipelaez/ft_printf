@@ -6,7 +6,7 @@
 /*   By: dipelaez <diego.pelaez@hotmail.com.br>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 14:54:27 by dipelaez          #+#    #+#             */
-/*   Updated: 2022/03/10 17:28:43 by dipelaez         ###   ########.fr       */
+/*   Updated: 2022/03/10 17:48:59 by dipelaez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include    <stdarg.h>
 # include    "libft.h"
 # include    <stdio.h>
-
 
 typedef struct s_node {
 	char			c;
@@ -49,6 +48,5 @@ char	*ft_itoa_base(unsigned long int n, int base, int upper);
 int		ft_cdigit_unsigned(unsigned long int x, int base);
 void	ft_itoa_address(t_data *data);
 void	ft_loop(t_data *data, const char **fmt, t_node *temp);
-
 
 #endif
