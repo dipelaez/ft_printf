@@ -6,22 +6,22 @@
 /*   By: dipelaez <diego.pelaez@hotmail.com.br>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 16:53:11 by dipelaez          #+#    #+#             */
-/*   Updated: 2022/03/10 17:48:17 by dipelaez         ###   ########.fr       */
+/*   Updated: 2022/03/10 17:58:24 by dipelaez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include    "ft_printf.h"
 
-int	ft_cdigit(long int nbr)
+int	ft_cdigit(unsigned long int x, int base)
 {
 	int	len;
 
-	if (nbr == 0)
+	if (x == 0)
 		return (1);
 	len = 0;
-	while (nbr > 0)
+	while (x > 0)
 	{
-		nbr /= 10;
+		x /= base;
 		len++;
 	}
 	return (len);
@@ -48,7 +48,7 @@ void	ft_putunsigint(t_data *data, unsigned int nbr)
 	int				len;
 
 	n = nbr;
-	len = ft_cdigit(n);
+	len = ft_cdigit(n, 10);
 	str = malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return ;
@@ -89,7 +89,7 @@ char	*ft_itoa_base(unsigned long int n, int base, int upper)
 	else
 		hold_base = "0123456789abcdef";
 	n_cpy = n;
-	len = ft_cdigit_unsigned(n_cpy, base);
+	len = ft_cdigit(n_cpy, base);
 	str = (char *)malloc(len + 1);
 	if (!str)
 		return (NULL);
@@ -112,21 +112,6 @@ void	ft_itoa_helper(t_data *data, int flag)
 	result = ft_itoa_base(va_arg(data->ap, unsigned long int), 16, flag);
 	ft_putstr(data, result);
 	free(result);
-}
-
-int	ft_cdigit_unsigned(unsigned long int x, int base)
-{
-	int	len;
-
-	if (x == 0)
-		return (1);
-	len = 0;
-	while (x > 0)
-	{
-		x /= base;
-		len++;
-	}
-	return (len);
 }
 
 void	ft_itoa_address(t_data *data)
@@ -205,7 +190,7 @@ void	ft_putint(t_data *data, int nbr)
 		signal = 1;
 		n = -n;
 	}
-	len = ft_cdigit(n);
+	len = ft_cdigit(n, 10);
 	str = malloc(sizeof(char) * (len + 1 + signal));
 	if (!str)
 		return ;
