@@ -6,7 +6,7 @@
 /*   By: dipelaez <diego.pelaez@hotmail.com.br>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:23:10 by dipelaez          #+#    #+#             */
-/*   Updated: 2022/03/10 13:45:41 by dipelaez         ###   ########.fr       */
+/*   Updated: 2022/03/10 17:28:05 by dipelaez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,34 +15,35 @@
 int	ft_printf(const char *fmt, ...)
 {
 	t_data	data;
-	t_node	*temp;
+	t_node	temp;
 
 	data.result = 0;
 	data.n_print = 0;
 	va_start(data.ap, fmt);
-	while (*fmt)
-	{
-		if (*fmt == '%')
-		{
-			fmt++;
-			check_parameter(&fmt, &data);
-			fmt++;
-		}
-		else
-		{
-			if (data.result == 0)
-				data.string = ft_new_node(*fmt);
-			else
-			{
-				temp = ft_new_node(*fmt);
-				ft_add_node(&data.string, temp);
-			}
-			fmt++;
-			data.result++;
-		}
-	}
-	if (data.result == 0)
-		return (0);
+	ft_loop(&data, &fmt, &temp);
+	// while (*fmt)
+	// {
+	// 	if (*fmt == '%')
+	// 	{
+	// 		fmt++;
+	// 		check_parameter(&fmt, &data);
+	// 		fmt++;
+	// 	}
+	// 	else
+	// 	{
+	// 		if (data.result == 0)
+	// 			data.string = ft_new_node(*fmt);
+	// 		else
+	// 		{
+	// 			temp = ft_new_node(*fmt);
+	// 			ft_add_node(&data.string, temp);
+	// 		}
+	// 		fmt++;
+	// 		data.result++;
+	// 	}
+	// }	
+	// if (data.result == 0)
+	// 	return (0);
 	ft_create_buffer(&data);
 	write(1, data.buffer, data.result);
 	ft_clean_list(&data.string);
@@ -135,4 +136,30 @@ void	ft_putint(t_data *data, int nbr)
 	ft_strfill(&ptr, n, signal);
 	ft_putstr(data, ptr);
 	free(ptr);
+}
+
+void	ft_loop(t_data *data, const char **fmt, t_node *temp)
+{	
+	while (**fmt)
+	{
+		if (**fmt == '%')
+		{
+			(*fmt)++;
+			printf("foi\n");
+			// check_parameter(&fmt, &data);
+			(*fmt)++;
+		}
+		else
+		{
+			if (data->result == 0)
+				data->string = ft_new_node(**fmt);
+			else
+			{
+				temp = ft_new_node(**fmt);
+				ft_add_node(&data->string, temp);
+			}
+			(*fmt)++;
+			data->result++;
+		}
+	}		
 }
