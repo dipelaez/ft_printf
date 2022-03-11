@@ -14,6 +14,7 @@ SRC = ft_printf.c \
 	ft_list.c \
 	ft_utils.c \
 	ft_string.c \
+	ft_number.c
 
 OBJ = $(SRC:.c=.o)
 
