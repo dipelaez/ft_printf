@@ -13,6 +13,7 @@ INCLUDE = libft/
 SRC = ft_printf.c \
 	ft_list.c \
 	ft_utils.c \
+	ft_string.c \
 
 OBJ = $(SRC:.c=.o)
 
