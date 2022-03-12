@@ -6,22 +6,22 @@
 /*   By: dipelaez <diego.pelaez@hotmail.com.br>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 16:53:11 by dipelaez          #+#    #+#             */
-/*   Updated: 2022/03/11 15:41:06 by dipelaez         ###   ########.fr       */
+/*   Updated: 2022/03/11 16:40:47 by dipelaez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include    "ft_printf.h"
 
-int	ft_cdigit(unsigned long int x, int base)
+int	ft_cdigit(unsigned long int nbr, int base)
 {
 	int	len;
 
-	if (x == 0)
+	if (nbr == 0)
 		return (1);
 	len = 0;
-	while (x > 0)
+	while (nbr > 0)
 	{
-		x /= base;
+		nbr /= base;
 		len++;
 	}
 	return (len);
@@ -44,31 +44,31 @@ void	ft_create_buffer(t_data *data)
 	data->buffer[i] = temp->c;
 }
 
-char	*ft_itoa_base(unsigned long int n, int base, int upper)
+char	*ft_itoa_base(unsigned long int nbr, int base, int upper)
 {
 	const char			*hold_base;
 	char				*ptr;
 	char				*str;
-	unsigned long int	n_cpy;
+	unsigned long int	nbr_cpy;
 	int					len;
 
 	if (upper)
 		hold_base = "0123456789ABCDEF";
 	else
 		hold_base = "0123456789abcdef";
-	n_cpy = n;
-	len = ft_cdigit(n_cpy, base);
+	nbr_cpy = nbr;
+	len = ft_cdigit(nbr_cpy, base);
 	str = (char *)malloc(len + 1);
 	if (!str)
 		return (NULL);
 	ptr = &str[len];
 	*ptr = '\0';
-	if (!n)
-		*(--ptr) = hold_base[n_cpy / base];
-	while (n_cpy)
+	if (!nbr)
+		*(--ptr) = hold_base[nbr_cpy / base];
+	while (nbr_cpy)
 	{
-		*(--ptr) = hold_base[n_cpy % base];
-		n_cpy /= base;
+		*(--ptr) = hold_base[nbr_cpy % base];
+		nbr_cpy /= base;
 	}
 	return (ptr);
 }

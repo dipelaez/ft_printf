@@ -6,7 +6,7 @@
 /*   By: dipelaez <diego.pelaez@hotmail.com.br>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 14:54:27 by dipelaez          #+#    #+#             */
-/*   Updated: 2022/03/11 15:33:17 by dipelaez         ###   ########.fr       */
+/*   Updated: 2022/03/11 16:41:51 by dipelaez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	ft_clean_list(t_node **node);
 
 void	ft_putchar(t_data *data, char c);
 void	ft_putstr(t_data *data, char *str);
-void	ft_strfill(char **ptr, long int n, int signal);
+void	ft_strfill(char **ptr, long int nbr, int signal);
 
 /*
 **--------------------------number related functions----------------------------
@@ -77,7 +77,7 @@ void	ft_putunsigint(t_data *data, unsigned int nbr);
 int		ft_cdigit(unsigned long int nbr, int base);
 void	ft_create_buffer(t_data *data);
 void	ft_itoa_helper(t_data *data, int flag);
-char	*ft_itoa_base(unsigned long int n, int base, int upper);
+char	*ft_itoa_base(unsigned long int nbr, int base, int upper);
 void	ft_itoa_address(t_data *data);
 
 #endif

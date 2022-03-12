@@ -6,7 +6,7 @@
 /*   By: dipelaez <diego.pelaez@hotmail.com.br>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 15:33:45 by dipelaez          #+#    #+#             */
-/*   Updated: 2022/03/11 15:34:58 by dipelaez         ###   ########.fr       */
+/*   Updated: 2022/03/11 16:41:17 by dipelaez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,14 @@ void	ft_putstr(t_data *data, char *str)
 	}
 }
 
-void	ft_strfill(char **ptr, long int n, int signal)
+void	ft_strfill(char **ptr, long int nbr, int signal)
 {
-	if (n == 0)
+	if (nbr == 0)
 		*(--*ptr) = '0';
-	while (n > 0)
+	while (nbr > 0)
 	{
-		*(--*ptr) = n % 10 + '0';
-		n /= 10;
+		*(--*ptr) = nbr % 10 + '0';
+		nbr /= 10;
 	}
 	if (signal == 1)
 		*(--*ptr) = '-';
