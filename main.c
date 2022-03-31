@@ -6,13 +6,14 @@
 /*   By: dipelaez <diego.pelaez@hotmail.com.br>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 20:28:51 by dipelaez          #+#    #+#             */
-/*   Updated: 2022/03/23 20:28:53 by dipelaez         ###   ########.fr       */
+/*   Updated: 2022/03/31 16:51:24 by dipelaez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "ft_printf.h"
 #include	<stdio.h>
+#include    <limits.h>
 
 int main(void)
 {
@@ -38,7 +39,12 @@ int main(void)
 	// ft_printf("%s", "");
     // ft_printf(" %x .", 9223372036854775807LL);
     // puts("");
-    printf(" %x ", 9223372036854775807LL);
+    ft_printf(" %x ", __LONG_MAX__);
+    puts("");
+    printf(" %lx ", __LONG_MAX__);
+    
+    
+
    
     return (0);
 }

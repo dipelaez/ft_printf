@@ -6,7 +6,7 @@
 /*   By: dipelaez <diego.pelaez@hotmail.com.br>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 14:54:27 by dipelaez          #+#    #+#             */
-/*   Updated: 2022/03/23 20:28:44 by dipelaez         ###   ########.fr       */
+/*   Updated: 2022/03/31 17:08:48 by dipelaez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,15 @@ void	ft_putunsigint(t_data *data, unsigned int nbr);
 
 int		ft_cdigit(unsigned long int nbr, int base);
 void	ft_create_buffer(t_data *data);
+
+
+/*
+**-------------------------ft_printf itoa functions----------------------------
+*/
+
 void	ft_itoa_helper(t_data *data, int flag);
-char	*ft_itoa_base(unsigned long int nbr, int base, int upper);
+char	*ft_itoa_base(unsigned int nbr, int base, int upper);
+char	*ft_itoa_pointer(unsigned long int nbr, int base, int upper);
 void	ft_itoa_address(t_data *data);
 
 #endif
